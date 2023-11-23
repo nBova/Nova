@@ -1,0 +1,14 @@
+Application Boot-up/Frontend Research
+
+Pegasus Frontend (https://pegasus-frontend.org/)
+  - Similar idea, consolidates game emulators and actual game launchers (like Steam, GOG) into one interface and allows games to be launched directly from there
+  - Allows shutting down and rebooting host PC directly from app
+  - Apparently lots of customization for the UI. Themes, menus, animations, custom shader code
+  - Written in C++
+
+Hyperspin
+  - Frontend for emulator consolidation
+
+
+
+Further research required for Windows kiosk mode (https://learn.microsoft.com/en-us/windows/configuration/kiosk-single-app)
