@@ -1,0 +1,33 @@
+SCRAPING METADATA FROM INSTALLED GAMES
+
+Steam
+- All steam games are found in \steamapps\common directory
+- looking through some Pegasus code, it looks like they scapre for game Metadata in two ways:
+	- Filling from cache
+		- Having trouble finding where they find the cache
+		- The cache seems to already be in a JSON file, and I think the format matches what's returned from the appids API
+		- I imagine loading what you can from the cache is good and fast. But maybe we focus on loading from the API first? Once we get to that point, I think we can make our own caching system
+	- Filling from network
+		- https://store.steampowered.com/api/appdetails/?appids=
+		- It looks like this URL is the api to fetch game metadata from the steam site. Just needs to be filled in with the "appids" parameter
+		- I actually plugged in the API to Postman with the "appids" for APEX Legends which looked like this:
+		- https://store.steampowered.com/api/appdetails/?appids=1172470
+		- What I got back was a JSON with a ton of information. Game name, genre, a bunch of images for thumbnails, pretty much anything you could want
+		- We can search through all this information and decide what we will display, and what to include in our SteamMetadata objects
+	
+EpicGames
+- 
+
+MetaData References:
+pegasus-frontend (https://github.com/mmatyas/pegasus-frontend/tree/master)
+
+LAUNCHING GAMES 3RD PARTY
+
+Steam
+	- This is great. We don't need to go looking for exe files in all the games. Steam provides a command, and all we need to provide to it is the game's app ID, which we will have easily
+	- This is the command: steam://rungameid/<id>
+	- Find an ID for a Steam game you have installed right now and insert it into that link. Press enter in a browser with that link pasted, the game boots.
+	- I think on Linux, you can type "steam steam://rungameid/<id>" into terminal and it should work, based on community forums
+
+EpicGames
+- 
